@@ -30,7 +30,7 @@ def main():
         print("zdroj: " + clanek['url'])
         for podobnost in table.similarities(clanek['tokeny']):
             if podobnost[1] > THRASH_HOLD and podobnost[0] != clanek['url']:
-                print("Souvisí: " + podobnost[0])
+                print("souvisí: " + podobnost[0])
                 pocet_souvislosti += 1
     print("------------------")
     print("nalezeno souvislostí: ", pocet_souvislosti)
