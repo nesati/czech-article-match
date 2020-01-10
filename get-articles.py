@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
+
+import feedparser
+
 """
-Získá články z rss feedů ve zdroje.txt
+Získá články z RSS zdrojů ve zdroje.txt
 """
 
 __author__ = "kokolem"
@@ -9,10 +12,8 @@ __license__ = "GPLv3"
 
 
 def main():
-    """ Main entry point of the app """
-    print("hello world")
+    print("rss here")
 
 
 if __name__ == "__main__":
-    """ This is executed when run from the command line """
     main()
