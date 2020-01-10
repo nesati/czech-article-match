@@ -22,12 +22,14 @@ Tento python program využívá morfoligyckého analyzátoru [Majka](https://nlp
 ## Závislosti
 
 ### nainstalovatelné přes PIP
-Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručne, jsou vypsané v `requirements.txt`.
+Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručně, jsou vypsané v `requirements.txt`.
 
 ### Majka
 První je potřeba stáhnout si její spustitelný soubor. Tady [pro Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) nebo tady [pro Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
 
 Dále je potřeba český slovník, ten lze stáhnout [odsud](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.w-lt).
 
+Oba soubory potom umístěte do stejného adresáře jako zbytek programu.
+
 ## Použití
-Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten po vypíše titulky a zdroje článků a k nim adresy těch souvisejících, pokud budou nějaké nalezeny.
+Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten vypíše titulky a zdroje článků a k nim adresy těch souvisejících, pokud budou nějaké nalezeny.
