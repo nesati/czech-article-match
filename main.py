@@ -11,7 +11,7 @@ __author__ = "kokolem"
 __version__ = "0.1.0"
 __license__ = "GPLv3"
 
-THRASH_HOLD = 0.07
+THRASH_HOLD = 0.09
 
 
 def main():
@@ -27,6 +27,7 @@ def main():
     for clanek in clanky:
         print("------------------")
         print(clanek['nadpis'])
+        print("zdroj: " + clanek['url'])
         for podobnost in table.similarities(clanek['tokeny']):
             if podobnost[1] > THRASH_HOLD and podobnost[0] != clanek['url']:
                 print("Souvisí: " + podobnost[0])
