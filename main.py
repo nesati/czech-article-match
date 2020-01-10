@@ -4,7 +4,7 @@ import tfidf
 import tokenize
 
 """
-Hlavní část programu, vypíše titlky, zdroje a související články
+Hlavní část programu, vypíše titulky, zdroje a související články
 """
 
 __author__ = "kokolem"
