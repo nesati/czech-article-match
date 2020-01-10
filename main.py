@@ -31,8 +31,8 @@ def main():
             if podobnost[1] > THRASH_HOLD and podobnost[0] != clanek['url']:
                 print("Souvisí: " + podobnost[0])
                 pocet_souvislosti += 1
-        print("------------------")
-        print("nalezeno souvislostí: ", pocet_souvislosti)
+    print("------------------")
+    print("nalezeno souvislostí: ", pocet_souvislosti)
 
 
 if __name__ == "__main__":
