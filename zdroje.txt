@@ -7,7 +7,6 @@ https://www.irozhlas.cz/rss/irozhlas
 https://www.reflex.cz/rss
 https://zpravy.aktualne.cz/rss/
 https://servis.lidovky.cz/rss.aspx
-http://feeds.feedburner.com/respekt-clanky
 https://a2larm.cz/feed/
 https://cz.sputniknews.com/export/rss2/archive/index.xml
 https://aeronet.cz/news/feed/

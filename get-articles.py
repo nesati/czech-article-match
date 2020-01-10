@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import re
 import feedparser
 
 """
@@ -17,15 +17,14 @@ def main():
 
     clanky = []
 
-    # nadpis a tělo článku se přidají do pole clanky
     for feed in rss_feedy:
-        clanky.append([clanek['title'] + " " + clanek['summary'] for clanek in feed['items']])
+        for clanek in feed['items']:
+            nadpis = clanek['title']
+            text = re.sub(r'[<][^>]*[>]', '', clanek['title'] + " " + clanek['summary'])  # nadpis a tělo článku bez xml
+            url = clanek['link']
+            clanky.append({'nadpis': nadpis, 'text': text, 'url': url})
 
-    clanky = [item for sublist in clanky for item in sublist]  # zploštění listu
-
-    for clanek in clanky:
-        print(clanek)
-        print("--------------------------------------")
+    return clanky
 
 
 if __name__ == "__main__":
