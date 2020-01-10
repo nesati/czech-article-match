@@ -11,7 +11,7 @@ __author__ = "kokolem"
 __version__ = "0.1.0"
 __license__ = "GPLv3"
 
-THRASH_HOLD = 0.09  # jak moc nepodobné články se budou řadit k sobě
+THRASH_HOLD = 0.08  # jak moc nepodobné články se budou řadit k sobě
 
 
 def main():
