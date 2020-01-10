@@ -2,7 +2,7 @@
 
 https://github.com/hrs/python-tf-idf
 
-##requirements
+## requirements
 
 ### majka
 Download Majka binaries [for Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) / [for Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
