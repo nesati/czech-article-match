@@ -1,0 +1,13 @@
+https://servis.idnes.cz/rss.aspx?c=zpravodaj
+https://ct24.ceskatelevize.cz/rss/hlavni-zpravy
+https://www.ceskenoviny.cz/sluzby/rss/zpravy.php
+https://denikn.cz/feed
+https://ihned.cz/?m=rss
+https://www.irozhlas.cz/rss/irozhlas
+https://www.reflex.cz/rss
+https://zpravy.aktualne.cz/rss/
+https://servis.lidovky.cz/rss.aspx
+http://feeds.feedburner.com/respekt-clanky
+https://a2larm.cz/feed/
+https://cz.sputniknews.com/export/rss2/archive/index.xml
+https://aeronet.cz/news/feed/
