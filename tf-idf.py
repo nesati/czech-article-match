@@ -1,4 +1,4 @@
-#https://github.com/hrs/python-tf-idf
+# https://github.com/hrs/python-tf-idf
 
 """The simplest TF-IDF library imaginable.
 
@@ -10,6 +10,7 @@ document by calling `similarities([list_of_words])`.
 See the README for a usage example.
 
 """
+
 
 class TfIdf:
     def __init__(self):
@@ -56,8 +57,7 @@ list of words.
             for k in query_dict:
                 if k in doc_dict:
                     score += (query_dict[k] / self.corpus_dict[k]) + (
-                      doc_dict[k] / self.corpus_dict[k])
+                            doc_dict[k] / self.corpus_dict[k])
             sims.append([doc[0], score])
 
         return sims
-
