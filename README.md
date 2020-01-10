@@ -25,7 +25,7 @@ Tento python program využívá morfoligyckého analyzátoru [Majka](https://nlp
 Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručně, jsou vypsané v `requirements.txt`.
 
 ### Majka
-První je potřeba stáhnout si její spustitelný soubor. Tady [pro Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) nebo tady [pro Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
+První je potřeba stáhnout si její spustitelný soubor. Tady [pro Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) (může být potřeba povolit spouštění souboru jako programu) nebo tady [pro Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
 
 Dále je potřeba český slovník, ten lze stáhnout [odsud](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.w-lt).
 
