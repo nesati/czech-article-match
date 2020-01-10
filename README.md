@@ -1,18 +1,33 @@
-# czech-article-match
+<h1 align="center">Spojování českých článků</h1>
 
-https://github.com/hrs/python-tf-idf
+<div align="center">
+  
+ My to zvládneme. Tak proč ne [newskit.](https://newskit.matsworld.io/)?
+ 
+[![License](https://img.shields.io/github/license/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/blob/master/LICENSE)
+ ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nesati/czech-article-match)
+ [![GitHub last commit](https://img.shields.io/github/last-commit/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/commits/master)
+ [![GitHub forks](https://img.shields.io/github/forks/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/network/members)
+ [![GitHub stars](https://img.shields.io/github/stars/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/stargazers)
+ [![GitHub contributors](https://img.shields.io/github/contributors/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/graphs/contributors)
+ [![GitHub issues](https://img.shields.io/github/issues/nesati/czech-article-match)](https://github.com/nesati/czech-article-match/issues)
+ ![Support <3](https://kokolem.github.io/LGBT-friendly-rainbow.svg)
+ 
+</div>
 
-## requirements
+## Jak to funguje?
+Tento python program využívá morfoligyckého analyzátoru (Majka)[https://nlp.fi.muni.cz/czech-morphology-analyser/] a metody (tf-idf)[https://en.wikipedia.org/wiki/Tf%E2%80%93idf] k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
+#### I proto jsou v něm od základu portály sputniknews a aeronet, rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.
 
-### majka
-Download Majka binaries [for Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) / [for Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
+## Závislosti
 
-GPL version 2
+### nainstalovatelné přes PIP
+Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručne, jsou vypsané v `requirements.txt`.
 
-### morphological database for Majka
-Czech data for assigning lemmata and tags to analyzed word forms
-[download](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.w-lt)
+### Majka
+První je potřeba stáhnout si spustitelný soubor Majky. Tady [pro Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) nebo tady [pro Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
 
-source vendor: Natural Language Processing Centre, Faculty of Informatics, Masaryk University, Brno, Czech Republic
+Dále je potřeba český slovník, ten lze stáhnout [odsud](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.w-lt).
 
-Creative Commons Attribution-ShareAlike 3.0 Unported License
+## Použití
+Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten po vypíše titulky a zdroje článků a k nim adresy těch souvisejících, pokud budou nějaké nalezeny.
