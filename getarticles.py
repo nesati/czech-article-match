@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import re
 import feedparser
 
@@ -7,11 +6,11 @@ Získá články z RSS zdrojů ve zdroje.txt
 """
 
 __author__ = "kokolem"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __license__ = "GPLv3"
 
 
-def main():
+def get():
     zdroje = [line.rstrip('\n') for line in open("zdroje.txt")]  # načtení zdrojů ze zdroje.txt
     rss_feedy = [feedparser.parse(zdroj) for zdroj in zdroje]  # stažení rss ze zdrojů
 
@@ -28,4 +27,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    get()

@@ -1,6 +1,14 @@
 import subprocess
 import re
 
+"""
+Vstupní text převede na pole slov v základním tvaru
+"""
+
+__author__ = "nesati"
+__version__ = "0.1.0"
+__license__ = "GPLv3"
+
 # allowed characters - czech
 regex = "[aábcčdďeéěfghchiíjklmnňoópqrřsštťuúůvwxyýzž \n]+"
 
