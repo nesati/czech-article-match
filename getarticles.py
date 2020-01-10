@@ -10,7 +10,7 @@ __version__ = "0.1.2"
 __license__ = "GPLv3"
 
 
-def get():
+def getarticles():
     zdroje = [line.rstrip('\n') for line in open("zdroje.txt")]  # načtení zdrojů ze zdroje.txt
     rss_feedy = [feedparser.parse(zdroj) for zdroj in zdroje]  # stažení rss ze zdrojů
 
@@ -27,4 +27,4 @@ def get():
 
 
 if __name__ == "__main__":
-    get()
+    getarticles()
