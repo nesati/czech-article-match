@@ -21,7 +21,7 @@ Tento python program využívá morfologyckého taggeru [MorphoDiTa](http://ufal
 
 ## Závislosti
 
-### nainstalovatelné přes PIP
+### Nainstalovatelné přes PIP
 Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručně, jsou vypsané v `requirements.txt`.
 
 ### MorphoDiTa
