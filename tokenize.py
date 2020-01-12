@@ -15,9 +15,10 @@ regex = "[aábcčdďeéěfghchiíjklmnňoópqrřsštťuúůvwxyýzž \n]+"
 
 def ngrams(input, n):
     output = []
-    for i in range(len(input)-n+1):
-        output.append(input[i:i+n])
+    for i in range(len(input) - n + 1):
+        output.append(input[i:i + n])
     return output
+
 
 def tokenize(text, majkaPath="./majka", dictionaryPath="./majka.w-lt"):
     tokens = "".join(re.findall(regex, text.lower())).split()  # regex a malá písmena
@@ -28,4 +29,4 @@ def tokenize(text, majkaPath="./majka", dictionaryPath="./majka.w-lt"):
     for line in results:
         output = line.split(":")
         lemmas.append(output[0] if len(output) == 1 else output[1])  # někdy Majka vrátí slovo tak, jak ho dostala
-    return [" ".join(x) for x in ngrams(lemmas, n=3)]+[" ".join(x) for x in ngrams(lemmas, n=2)]+lemmas
+    return [" ".join(x) for x in ngrams(lemmas, n=3)] + [" ".join(x) for x in ngrams(lemmas, n=2)] + lemmas
