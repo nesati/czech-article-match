@@ -16,12 +16,11 @@
 </div>
 
 ## Jak to funguje?
-Tento python program využívá morfoligyckého analyzátoru [Majka](https://nlp.fi.muni.cz/czech-morphology-analyser/) a metody [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
-#### I proto jsou v něm od základu portály sputniknews a aeronet, rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.
+Tento python program využívá morfoligyckého analyzátoru [Majka](https://nlp.fi.muni.cz/czech-morphology-analyser/) a metody [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací. **I proto jsou v něm od základu portály sputniknews a aeronet, rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.**
 
 ## Závislosti
 
-### nainstalovatelné přes PIP
+### Nainstalovatelné přes PIP
 Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručně, jsou vypsané v `requirements.txt`.
 
 ### Majka
