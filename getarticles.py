@@ -30,4 +30,4 @@ def getarticles():
 
 
 if __name__ == "__main__":
-    getarticles()
+    print(getarticles())
