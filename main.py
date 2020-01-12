@@ -23,7 +23,7 @@ def main():
         preprocessor.add_article(clanek['text'])
     korpus = preprocessor.preprocess()
 
-    if len(korpus) != len(clanky):
+    if len(korpus) != len(clanky) and len(korpus) != 0:
         print("Chyba! Jeden nebo více článků obsahuje znak ‽, který je vnitřně používaný k jejich oddělení.")
         exit(1)
 
