@@ -33,4 +33,4 @@ Dále jsou potřeba české modely, jejich nejnovější verzi lze stáhnout [od
 `preprocessor.py` využívá k práci s MorphoDiTa volání unixového příkazu. Ačkoliv MorphoDiTa sama o sobě má spustitelné soubory i pro Windows, tento příkaz v něm nebude fungovat a `czech-article-match` je tedy bez úpravy preprocessoru pod Windows nepoužitelný. 
 
 ## Použití
-Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten vypíše titulky a zdroje článků a k nim adresy těch souvisejících, pokud budou nějaké nalezeny.
+Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten vypíše `True` nebo `False` podle toho, jestli dva članky, jejichž url je pevně v kódu, pojednávají o tom stejném.
