@@ -16,7 +16,7 @@
 </div>
 
 ## Jak to funguje?
-Tento python program využívá morfoligyckého taggeru [MorphoDiTa](http://ufal.mff.cuni.cz/morphodita) a knihovny [gensim](https://radimrehurek.com/gensim/index.html) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
+Tento python program využívá morfologyckého taggeru [MorphoDiTa](http://ufal.mff.cuni.cz/morphodita) a knihovny [gensim](https://radimrehurek.com/gensim/index.html) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
 **I proto jsou v něm od základu portály sputniknews a aeronet, které rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.**
 
 ## Závislosti
