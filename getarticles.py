@@ -19,7 +19,10 @@ def getarticles():
     for feed in rss_feedy:
         for clanek in feed['items']:
             nadpis = clanek['title']
-            text = re.sub(r'[<][^>]*[>]', '', clanek['title'] + " " + clanek['summary'])  # nadpis a tělo článku bez xml
+
+            # nadpis a tělo článku bez html
+            text = re.sub(r'[<][^>]*[>]', ' ', clanek['title'] + " " + clanek['summary'])
+
             url = clanek['link']
             clanky.append({'nadpis': nadpis, 'text': text, 'url': url})
 

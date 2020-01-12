@@ -16,20 +16,21 @@
 </div>
 
 ## Jak to funguje?
-Tento python program využívá morfoligyckého analyzátoru [Majka](https://nlp.fi.muni.cz/czech-morphology-analyser/) a metody [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
-#### I proto jsou v něm od základu portály sputniknews a aeronet, rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.
+Tento python program využívá morfoligyckého taggeru [MorphoDiTa](http://ufal.mff.cuni.cz/morphodita) a knihovny [gensim](https://radimrehurek.com/gensim/index.html) k vyčíslení podobnosti mezi články načtenými přes RSS (seznam používaných kanálů lze upravit, načítá se ze souboru `zdroje.txt`). Je ale spíše ukázkou, že to vůbec jde, než použitelnou aplikací.
+**I proto jsou v něm od základu portály sputniknews a aeronet, které rozhodně nejsou důvěryhodnými zdroji! Dobře ale slouží k demonstraci hledání souvislostí v textu.**
 
 ## Závislosti
 
 ### nainstalovatelné přes PIP
 Pomocí `pip -r requirements.txt` je lze nainstalovat automaticky. Druhou možností je to udělat ručně, jsou vypsané v `requirements.txt`.
 
-### Majka
-První je potřeba stáhnout si její spustitelný soubor. Tady [pro Linux](https://nlp.fi.muni.cz/czech-morphology-analyser/majka) (může být potřeba povolit spouštění souboru jako programu) nebo tady [pro Windows](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.exe).
+### MorphoDiTa
+První jsou potřeba spustitelné soubory. Z [GitHubu](https://github.com/ufal/morphodita/releases) si stáhněte nejnovější verzi (například `mordphodita-1.9.2-bin.zip`) a extrahujte ji. Ze složky `bin-[váš operační systém][vaše architektura]` zkopírujte do stejného adresáře, ve kterém se nachází zbytek programu, soubor `run_tagger`.  
 
-Dále je potřeba český slovník, ten lze stáhnout [odsud](https://nlp.fi.muni.cz/czech-morphology-analyser/majka.w-lt).
+Dále jsou potřeba české modely, jejich nejnovější verzi lze stáhnout [odsud](http://ufal.mff.cuni.cz/morphodita/users-manual#czech-morfflex-pdt_download). Archiv opět extrahujte a najděte v něm soubor `czech-morfflex-pdt-[verze modelů].tagger`. Ten zkopírujte do složky se zbytkem programu a přejmenujte ho na `czech-morfflex.tagger`
 
-Oba soubory potom umístěte do stejného adresáře jako zbytek programu.
+#### Poznámka
+`preprocessor.py` využívá k práci s MorphoDiTa volání unixového příkazu. Ačkoliv MorphoDiTa sama o sobě má spustitelné soubory i pro Windows, tento příkaz v něm nebude fungovat a `czech-article-match` je tedy bez úpravy preprocessoru pod Windows nepoužitelný. 
 
 ## Použití
 Po instalaci závislostí je program možné spustit zavoláním `main.py`, ten vypíše titulky a zdroje článků a k nim adresy těch souvisejících, pokud budou nějaké nalezeny.

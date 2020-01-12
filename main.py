@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import getarticles
-import tfidf
-import tokenize
+from getarticles import getarticles
+from preprocessor import Preprocessor
+from gensim import corpora, models, similarities
 
 """
 Hlavní část programu, vypíše titulky, zdroje a související články
@@ -11,29 +11,46 @@ __author__ = "kokolem"
 __version__ = "0.1.0"
 __license__ = "GPLv3"
 
-THRASH_HOLD = 0.08  # jak moc nepodobné články se budou řadit k sobě
+THRESHOLD = 0.35  # jak moc nepodobné články se budou řadit k sobě
 
 
 def main():
-    clanky = getarticles.getarticles()  # načtení článků z RSS
-    table = tfidf.TfIdf()  # inicializace TfIdf
-    for clanek in clanky:
-        tokeny = tokenize.tokenize(clanek['text'])  # tokeny jsou základní tvary slov
-        clanek['tokeny'] = tokeny
-        table.add_document(clanek['url'], tokeny)  # přidání článku do tfidf ke zpracování
+    clanky = getarticles()  # načtení článků z RSS
 
-    pocet_souvislosti = 0  # celkový počet nalezených souvislostí, hodí se k hraní si s trash holdem
+    # předpříprava (tokenizace, otagování a normalizace) textů
+    preprocessor = Preprocessor()
+    for clanek in clanky:
+        preprocessor.add_article(clanek['text'])
+    korpus = preprocessor.preprocess()
+
+    if len(korpus) != len(clanky):
+        print("Chyba! Jeden nebo více článků obsahuje znak ‽, který je vnitřně používaný k jejich oddělení.")
+        exit(1)
+
+    # zpětné přiřazení tokenů k jejich článkům
+    cislo_clanku = 0
+    for clanek in clanky:
+        clanek['tokeny'] = korpus[cislo_clanku]
+        cislo_clanku += 1
+
+    slovnik = corpora.Dictionary(korpus)
+    bow_korpus = [slovnik.doc2bow(zpracovany_clanek) for zpracovany_clanek in korpus]
+    tfidf = models.TfidfModel(bow_korpus, smartirs="nfu")
+    index = similarities.SparseMatrixSimilarity(tfidf[bow_korpus], num_features=len(slovnik))
+
+    celkem_souvislosti = 0
 
     for clanek in clanky:
-        print("------------------")
+        print("---------------")
         print(clanek['nadpis'])
-        print("zdroj: " + clanek['url'])
-        for podobnost in table.similarities(clanek['tokeny']):  # podobnost[0] je url článku, podobnost[1] samotné číslo
-            if podobnost[1] > THRASH_HOLD and podobnost[0] != clanek['url']:  # nejpodobnější je článek sám sobě
-                print("souvisí: " + podobnost[0])
-                pocet_souvislosti += 1
-    print("------------------")
-    print("nalezeno souvislostí: ", pocet_souvislosti)
+        print("zdroj: ", clanek['url'])
+        for podobnost in list(enumerate(index[slovnik.doc2bow(clanek['tokeny'])])):
+            if podobnost[1] > THRESHOLD and clanky[podobnost[0]]['url'] != clanek['url']:
+                print("souvisí: ", clanky[podobnost[0]]['url'])
+                celkem_souvislosti += 1
+
+    print("---------------")
+    print("celkem souvislostí: ", celkem_souvislosti)
 
 
 if __name__ == "__main__":
