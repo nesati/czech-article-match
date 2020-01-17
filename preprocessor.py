@@ -27,6 +27,7 @@ class Preprocessor:
         # uložení všech článků do souboru
         cache_clanku = open("clanky", "w")
         cache_clanku.write(self.clanky)
+        cache_clanku.close()
 
         # unix příkaz k použití taggeru na články v souboru
         command = "./run_tagger czech-morfflex.tagger clanky" \
